@@ -42,3 +42,7 @@ h1 {
 div.container.text-center {
     margin-top: 60px;
 }
+
+.action {
+    opacity: 0.8;
+}

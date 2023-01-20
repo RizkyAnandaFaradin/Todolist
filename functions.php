@@ -35,10 +35,31 @@ return mysqli_affected_rows($conn);
 }
 
 
-function hapus()
+function hapus($id)
 {
-   
+   global $conn;
+
+   mysqli_query($conn, "DELETE FROM task WHERE id = $id");
 }
+
+function ubah($data)
+{
+ global $conn;
+//htmlspecialchars untuk menghalangi input yang tidak sesuai atau memasukkan char yang aneh
+$id = $data['id'];
+$tanggal = $data['tanggal'];
+$tasks = htmlspecialchars($data['task']); 
+
+
+$query = "UPDATE task SET id = '$id', tanggal = '$tanggal', tasks = '$tasks' WHERE id =$id";
+
+mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
+
+
+}
+   
 
 
 ?>

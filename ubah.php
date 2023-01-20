@@ -1,28 +1,32 @@
 <?php 
 require 'functions.php';
+$conn = mysqli_connect("localhost", "root", "", "todolist"); 
 
-
-$list = query("SELECT *  FROM task");
-
-
+$id = $_GET['id'];
+$list = query("SELECT * FROM task WHERE id = $id");
 
 if (isset($_POST['submit'])) {
-   if (!tambah($_POST)>0) {
+   if (ubah($_POST)>0) {
+      echo "
+      <script>
+      alert('data berhasil diubah');
+      document.location.href = 'index.php';
+      </script> " ;
+   } else {
       echo "
       <script> 
-      alert('data gagal ditambahkan');
+      alert('data gagal diubah');
+      document.location.href = 'ubah.php';
       </script>
       ";
+  
    }
- }
+  }
 
 
 
+?>
 
-
-
-
- 
 
 ?>
 
@@ -80,9 +84,8 @@ if (isset($_POST['submit'])) {
                      </td>
 
                       <td>
-                      <a href="hapus.php?id= <?= $lis["id"]?>" class="btn btn-danger action">Delete</a>  
+                      <a href="index.php" class="btn btn-danger action">Cancel</a>  
                      
-                      <a href="ubah.php?id=<?= $lis["id"] ?>" class="btn btn-secondary action" id="ubah" >Change</a>
                      </td>
                   </tr>                  
                </tbody>
@@ -95,29 +98,36 @@ if (isset($_POST['submit'])) {
          </div>
          <!-- End tabel todolist -->
       
-      
+        <?php 
+           
+               foreach ($list as $lis) {
+               ?>
                <!-- Start tabel todolist -->
                <div class="col-sm-4">
-                  <form action="" method="post">
+                  <form action="" method="POST">
+                          <input type="text" name="id"  required value="<?=($lis["id"]) ?>" hidden="hidden">
                      <div class="card border-info mb-3" style="max-width: 18rem;">
-                        <div class="card-header" style="font-weight: bold" >Add Task</div>
+                        <div class="card-header" style="font-weight: bold" >Change Task</div>
                         <div class="card-body">
                            <div class="input-group mb-3">
                               <label class="input-group-text" for="tanggal">Date</label>
-                              <input type="date" class="form-control"  aria-label="date"  name="tanggal" id="tanggal">
+                              <input type="date" class="form-control"  aria-label="date"  name="tanggal" id="tanggal" required value="<?=($lis["tanggal"])?>">
                            </div>
                            <div class="input-group mb-3">
                               <label class="input-group-text" for="task">Task</label>
-                              <input type="text" class="form-control" placeholder="Task" aria-label="Username"  name="task" id="task">
+                              <input type="text" class="form-control" placeholder="Task" aria-label="Username"  name="task" id="task" required  value="<?=($lis["tasks"])?>">
                            </div>
                             <div id="liveAlertPlaceholder"></div>
                            
-                           <button type="submit" class="btn btn-outline-info" name="submit" id="liveAlertBtn" >Add</button>
+                           <button type="submit" class="btn btn-outline-info" name="submit" id="liveAlertBtn" >Change</button>
                         </div>
                      </div>
                   </form>
 
-
+<?php 
+               
+               }  
+               ?>  
 
 
              
@@ -144,8 +154,6 @@ if (isset($_POST['submit'])) {
 
 
 </main>
-
-<h1>dsaasdas</h1>
 
 
 <script src="index.js"></script>
