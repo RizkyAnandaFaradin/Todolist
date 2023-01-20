@@ -15,4 +15,25 @@ function query($query){
    return $rows;
 }
 
+
+
+function tambah($data)
+{
+global $conn;
+//htmlspecialchars untuk menghalangi input yang tidak sesuai atau memasukkan char yang aneh
+$tanggal = $data['tanggal'];
+$tasks = htmlspecialchars($data['tasks']); 
+
+
+$query = "INSERT INTO task 
+            VALUES
+            ('', '$tanggal', '$tasks')
+               ";
+            mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
+}
+
+
+
 ?>

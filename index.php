@@ -39,55 +39,57 @@ $list = query("SELECT *  FROM task");
                   </tr>
                </thead>
 
-             
-      
-            <?php 
-            $i = 1;  
-            foreach ($list as $lis) {
-            
-            ?>
-         
+                  
+               <?php 
+               $i = 1;  
+               foreach ($list as $lis) {
+               ?>
+
                <tbody class="table-secondary">
                   <tr>
-                     <th scope="row"><?= $i;  ?></th>
+                     <th scope="row">
+                        <?= $i;  ?>
+                     </th>
 
-                     <!-- menampilkan date dengan format tahun yang pertama -->
                      <td>
-                        <?php   echo $lis["tanggal"];  ?>
+                        <?php echo $lis["tanggal"];  ?>
                      </td>                 
 
                      <td>                        
                         <?php echo $lis["tasks"];  ?>
                      </td>
 
-                      <td>Change | Delete</td>
+                      <td>
+                        Change | Delete
+                     </td>
                   </tr>                  
                </tbody>
-            <?php 
-            $i++;
-            }  
-            ?>
 
-
-
-
-               
-          
-
-
-
-
-
-
-            </table>
+               <?php 
+               $i++;
+               }  
+               ?>          
+          </table>
          </div>
          <!-- End tabel todolist -->
       
       
       
       
+         <!-- Start tabel todolist -->
       
-      <div class="col-sm-4">col-sm-4</div>
+      <div class="col-sm-4">
+         <h5>Add Task</h5>
+          <div class="input-group mb-3">
+             <span class="input-group-text" id="basic-addon1">Date</span>
+             <input type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+         <div class="input-group mb-3">
+             <span class="input-group-text" id="basic-addon1">Task</span>
+             <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+         <button type="button" class="btn btn-outline-info">Info</button>
+      </div>
    </div>
    </div>
 
