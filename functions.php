@@ -21,8 +21,8 @@ function tambah($data)
 {
 global $conn;
 //htmlspecialchars untuk menghalangi input yang tidak sesuai atau memasukkan char yang aneh
-$tanggal = $data['tanggal'];
-$tasks = htmlspecialchars($data['tasks']); 
+$tanggal = $data["tanggal"];
+$tasks = htmlspecialchars($data["task"]); 
 
 
 $query = "INSERT INTO task 
@@ -34,6 +34,11 @@ $query = "INSERT INTO task
 return mysqli_affected_rows($conn);
 }
 
+
+function hapus()
+{
+   
+}
 
 
 ?>
