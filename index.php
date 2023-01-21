@@ -45,6 +45,7 @@ if (isset($_POST['submit'])) {
                      </div>
                </form>
                <br>
+              
             <!-- Start tabel todolist -->
             <table class="table ">
                <thead>
@@ -111,8 +112,12 @@ if (isset($_POST['submit'])) {
                      <button type="submit" class="btn btn-outline-info" name="submit" id="liveAlertBtn" >Add</button>
                   </div>
                </div>
-            </form>
-         </div>      
+            </form>   
+               <a href="logout.php" class="btn btn-danger action" style="float:left" >Logout</a>  
+         
+         </div>
+      
+         
       </div>
    </main>
    <script src="js/index.js"></script> 
