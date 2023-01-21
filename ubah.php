@@ -23,10 +23,7 @@ if (isset($_POST['submit'])) {
    }
   }
 
-
-
 ?>
-
 
 ?>
 
@@ -124,7 +121,7 @@ if (isset($_POST['submit'])) {
                      </div>
                   </form>
 
-<?php 
+               <?php 
                
                }  
                ?>  
