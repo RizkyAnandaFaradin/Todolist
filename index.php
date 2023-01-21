@@ -4,12 +4,12 @@ require 'functions.php';
 $list = query("SELECT *  FROM task");
 
 if (isset($_POST['submit'])) {
-   if (!tambah($_POST)>0) {
-      echo "
-      <script> 
-      alert('data gagal ditambahkan');
-      </script>
-      ";
+   if (tambah($_POST)>0) {
+         echo "
+      <script>
+       document.location.href = 'index.php';
+      </script> " ;
+ 
    }
  }
 
