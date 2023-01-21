@@ -1,4 +1,13 @@
 <?php 
+
+session_start();
+
+
+if (!isset($_SESSION["login"])) {
+      header('Location: login/login.php');
+      exit;
+}
+
 require 'functions.php';
 
 $list = query("SELECT *  FROM task");
@@ -12,7 +21,6 @@ if (isset($_POST['submit'])) {
  
    }
  }
-
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +49,8 @@ if (isset($_POST['submit'])) {
                         <button class="btn btn-secondary" type="button">
                            <i class="fa fa-search">Search</i>
                          </button>
-                        </div>
                      </div>
+                  </div>
                </form>
                <br>
               

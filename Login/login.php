@@ -1,6 +1,25 @@
-<?php 
-require '../functions.php';
+<?php
 session_start();
+
+require '../functions.php';
+
+if (isset($_COOKIE['id'])&& isset($_COOKIE['key'])) {
+  $id = $_COOKIE['id'];
+  $key = $_COOKIE['key'];
+
+ 
+  $result = mysqli_query($conn, "SELECT username FROM user WHERE id = '$id'");
+
+  $row = mysqli_fetch_assoc($result);
+  
+  if ($key===hash('sha256', $row["username"])) {
+    $_SESSION["login"]=true;
+  }
+
+}
+
+
+
 
 if (isset($_SESSION["login"])) {
       header('Location: ../index.php');
@@ -11,7 +30,7 @@ if (isset($_SESSION["login"])) {
 
 
 
-if (isset($_POST["login"])){
+if (isset($_POST['login'])){
   $password = $_POST['password'];
   $username = $_POST['username'];
 
@@ -19,12 +38,19 @@ if (isset($_POST["login"])){
   
 
 
-  if(mysqli_num_rows($result) > 0){
+  if(mysqli_num_rows($result)>0){
 
     $row = mysqli_fetch_assoc($result);
-   
-    if($password == $row["password"]){
+    
+    if(password_verify($password, $row["password"])){
       $_SESSION['login'] = true;
+
+      if (isset($_POST["remember"])) {
+        setcookie('id', $row['id'], time()+60);
+        setcookie('key', hash('sha256', $row['username']), time()+60);
+
+      }
+
       header('Location: ../index.php');
       exit;
     }
@@ -94,14 +120,15 @@ if (isset($error)) : ?>
       <input type="password" class="form-control form-control-sm" id="password" placeholder="Enter password" name="password">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
+      <input type="checkbox" name="remember" id="remember">
+      <label for="remember"> Remember me</label>
     </div>
 
     <div class="text-center d-flex justify-content-center" >
     <button type="submit" class="btn btn-primary btn-sm " style="margin-top: 10px;" name="login" id="login">Login</button>
 </div>
     <div class="text-center d-flex justify-content-center">
-    <a href="" >Create New Account</a>
+    <a href="../register/register.php" >Create New Account</a>
 </div>
   </form>
 </div>

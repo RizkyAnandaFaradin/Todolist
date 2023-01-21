@@ -1,9 +1,18 @@
 <?php 
+session_start();
+
+if (!isset($_SESSION["login"])) {
+      header('Location: login/login.php');
+      exit;
+}
+
 require 'functions.php';
+
+$id = $_GET["id"];
+
 $conn = mysqli_connect("localhost", "root", "", "todolist"); 
 
-$id = $_GET['id'];
-$list = query("SELECT * FROM task WHERE id = $id");
+$list = query("SELECT * FROM task WHERE id = '$id'");
 
 if (isset($_POST['submit'])) {
    if (ubah($_POST)>0) {
@@ -102,7 +111,7 @@ if (isset($_POST['submit'])) {
                <!-- Start tabel todolist -->
                <div class="col-sm-4">
                   <form action="" method="POST">
-                          <input type="text" name="id"  required value="<?=($lis["id"]) ?>" hidden="hidden">
+                          <input type="text" name="id"  required value="<?=($lis["id"]) ?>" hidden ="hidden">
                      <div class="card border-info mb-3" style="max-width: 18rem;">
                         <div class="card-header" style="font-weight: bold" >Change Task</div>
                         <div class="card-body">
@@ -112,7 +121,7 @@ if (isset($_POST['submit'])) {
                            </div>
                            <div class="input-group mb-3">
                               <label class="input-group-text" for="task">Task</label>
-                              <input type="text" class="form-control" placeholder="Task" aria-label="Username"  name="task" id="task" required  value="<?=($lis["tasks"])?>">
+                              <input type="text" class="form-control" placeholder="Task" aria-label="tasks"  name="tasks" id="tasks" required  value="<?=($lis["tasks"])?>">
                            </div>
                             <div id="liveAlertPlaceholder"></div>
                            
