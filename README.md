@@ -1,6 +1,6 @@
-## Todolist
+Todolist
 
-#Todo List Application with PHP and MySQL
+Todo List Application with PHP and MySQL
 
 This application is made of:
 
