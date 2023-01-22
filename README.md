@@ -2,7 +2,7 @@
 Todo List Application with PHP and MySQL
 
 This application is made of:
-![My Remote Image](https://image.pngaaa.com/628/2459628-middle.png)
+![image](https://user-images.githubusercontent.com/72976453/213944790-df07ea88-cda9-4e74-ab3a-b82621b5845c.png)
 1. Javascript, this is to create search and alert features.
 2. PHP, this is for programming logic.
 3. HTML, for web structure.
