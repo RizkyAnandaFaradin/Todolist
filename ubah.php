@@ -43,9 +43,9 @@ if (isset($_POST['submit'])) {
    <title>Todo List</title>
 </head>
 <body>
-  <main class="container container-sm " " >
-   <h1>
-      Change Tab
+  <main class="container container-sm ">
+   <h1 style="color: white; margin-top: 20px;" >
+      Change Tabs
    </h1>
 
    <div class="container text-center scrollbar" >
