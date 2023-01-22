@@ -1,5 +1,6 @@
-# Todolist
-Todo List Application with PHP and MySQL
+## Todolist
+
+#Todo List Application with PHP and MySQL
 
 This application is made of:
 
@@ -13,7 +14,7 @@ Frameworks used:
 
 ![image](https://user-images.githubusercontent.com/72976453/213944924-8714668e-855d-46dd-91cf-3d2d7ab07769.png)
 
-Boostrap for webviews
+Bootstrap for webviews
 
 There are several features on this website, namely
 1. Login and user registration features accompanied by remember me, where the data will be stored in MySQL.
