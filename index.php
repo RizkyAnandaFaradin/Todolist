@@ -102,11 +102,11 @@ if (isset($_POST['submit'])) {
             <!-- Start tabel todolist -->
             <table class="table ">
                <thead>
-                  <tr class="table-primary" id="primary" style="font-weight: bold">
-                     <th scope="col">No</th>
-                     <th scope="col">Date</th>
-                     <th scope="col">Tasks</th>
-                     <th scope="col">Action</th>
+                  <tr class="table-primary"  style="font-weight: bold">
+                     <th id="primary"scope="col">No</th>
+                     <th id="primary"scope="col">Date</th>
+                     <th id="primary"scope="col">Tasks</th>
+                     <th id="primary"scope="col">Action</th>
                   </tr>
                </thead>
 

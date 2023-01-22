@@ -27,6 +27,10 @@ search.addEventListener('input', function () {
 
     // loop through rows
     rows.forEach(function (row) {
+        if (row.classList.contains('table-primary')) {
+            row.style.display = '';
+            return;
+        }
         // select all cells in row
         const cells = row.querySelectorAll('td');
 
