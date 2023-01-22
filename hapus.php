@@ -3,7 +3,6 @@ require 'functions.php';
 
 $id = $_GET["id"];
 
-
 if (hapus($id)==null) {
          echo "
       <script>

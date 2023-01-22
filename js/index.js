@@ -24,7 +24,7 @@ search.addEventListener('input', function () {
 
     // select all table rows
     const rows = document.querySelectorAll('table tr');
-
+    console.log(rows.forEach);
     // loop through rows
     rows.forEach(function (row) {
         if (row.classList.contains('table-primary')) {

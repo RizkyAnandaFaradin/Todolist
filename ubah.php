@@ -7,10 +7,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 require 'functions.php';
-
+$conn;
 $id = $_GET["id"];
-
-$conn = mysqli_connect("localhost", "root", "", "todolist"); 
 
 $list = query("SELECT * FROM task WHERE id = '$id'");
 
@@ -34,8 +32,6 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +52,6 @@ if (isset($_POST['submit'])) {
       <div class="row">
          <div class="col-sm-8">
 
-
          <!-- Start tabel todolist -->
             <table class="table ">
                <thead>
@@ -67,12 +62,8 @@ if (isset($_POST['submit'])) {
                      <th scope="col">Action</th>
                   </tr>
                </thead>
-
-                  
-               <?php 
-               $i = 1;  
-               foreach ($list as $lis) {
-               ?>
+     
+               <?php $i = 1; foreach ($list as $lis) { ?>
 
                <tbody class="table-secondary">
                   <tr : nth-child>
@@ -95,18 +86,13 @@ if (isset($_POST['submit'])) {
                   </tr>                  
                </tbody>
 
-               <?php 
-               $i++;
-               }  
-               ?>          
+               <?php $i++; } ?>          
           </table>
          </div>
          <!-- End tabel todolist -->
       
-        <?php 
-           
-               foreach ($list as $lis) {
-               ?>
+        <?php  foreach ($list as $lis) { ?>
+
                <!-- Start tabel todolist -->
                <div class="col-sm-4">
                   <form action="" method="POST">
@@ -129,39 +115,10 @@ if (isset($_POST['submit'])) {
                      </div>
                   </form>
 
-               <?php 
-               
-               }  
-               ?>  
-
-
-             
-
-
-
-           
-
-
-
-
-
-
-
-
-      
+               <?php }  ?>  
          </div>
       </div>
-   
-
-
-
-    
-
-
 </main>
-
-
 <script src="index.js"></script>
-
 </body>
 </html>

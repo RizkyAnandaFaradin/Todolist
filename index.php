@@ -2,7 +2,6 @@
 
 session_start();
 
-
 if (!isset($_SESSION["login"])) {
       header('Location: login/login.php');
       exit;
@@ -34,12 +33,7 @@ if (isset($_POST['submit'])) {
    <title>Todo List</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-    
-    "
-
->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);">
   <div class="container">
     <a class="navbar-brand" href="https://rizkyanandafaradin.github.io/rizkyanandafweb/">
       <img class ="rounded-circle" style="width: 50px" src="img/logoRANF.png" alt="">
@@ -58,27 +52,7 @@ if (isset($_POST['submit'])) {
         <li class="nav-item">
           <a class="nav-link" style="color: white;" href="logout.php">Logout</a>
         </li>
-        
- 
-
-
-
-
-          <!-- <li class="nav-item">
-               <form>
-                  <div class="form-group">
-                     <div class="input-group" >
-                       <input type="text" class="form-control" placeholder="Search" id="search" style="width: 100px; height: 30px">
-                      
-                     </div>
-                  </div>
-               </form>
-         
-        </li> -->
-
-
-      </ul>
-      
+      </ul>   
     </div>
      <form class="form-inline navbar-collapse collapse" id="collapse">
     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search">
@@ -86,9 +60,7 @@ if (isset($_POST['submit'])) {
   </div>
 </nav>
 
-
-
-  <main class="container container-sm " " >
+  <main class="container container-sm "  >
   <br>
       <h1 style="color: white">
          Todo List Application with PHP and MySQL 
@@ -97,8 +69,6 @@ if (isset($_POST['submit'])) {
       <div class="container text-center scrollbar" >
          <div class="row">
             <div class="col-sm-8">
-         
-         
             <!-- Start tabel todolist -->
             <table class="table ">
                <thead>
@@ -111,10 +81,7 @@ if (isset($_POST['submit'])) {
                </thead>
 
                   
-               <?php 
-               $i = 1;  
-               foreach ($list as $lis) {
-               ?>
+               <?php $i = 1;  foreach ($list as $lis) {?>
 
                <tbody class="table-secondary">
                   <tr : nth-child>
@@ -138,10 +105,8 @@ if (isset($_POST['submit'])) {
                   </tr>                  
                </tbody>
 
-               <?php 
-               $i++;
-               }  
-               ?>          
+               <?php $i++; }  ?>    
+
             </table>
          </div>
          <!-- End tabel todolist -->
@@ -165,15 +130,11 @@ if (isset($_POST['submit'])) {
                      <button type="submit" class="btn btn-outline-info" name="submit" id="liveAlertBtn" >Add</button>
                   </div>
                </div>
-            </form>   
-         
+            </form>      
          </div>
-      
-         
       </div>
    </main>
    <script src="js/index.js"></script> 
    <script src="bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script> 
-
 </body>
 </html>
