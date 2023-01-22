@@ -2,7 +2,7 @@
 Todo List Application with PHP and MySQL
 
 This application is made of:
-![My Remote Image](https://www.freepnglogos.com/uploads/javascript/logo-html-5-css-javascript-source-code-for-the-taking-23.png)
+![My Remote Image](https://image.pngaaa.com/628/2459628-middle.png)
 1. Javascript, this is to create search and alert features.
 2. PHP, this is for programming logic.
 3. HTML, for web structure.
