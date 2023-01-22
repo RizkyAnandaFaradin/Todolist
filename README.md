@@ -9,6 +9,7 @@ This application is made of:
 3. HTML, for web structure.
 
 Frameworks used:
+
 ![image](https://user-images.githubusercontent.com/72976453/213944924-8714668e-855d-46dd-91cf-3d2d7ab07769.png)
 
 Boostrap for webviews
