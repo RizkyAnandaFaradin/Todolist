@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-?>
 
 
 <!DOCTYPE html>
@@ -50,7 +49,7 @@ if (isset($_POST['submit'])) {
 <body>
   <main class="container container-sm " " >
    <h1>
-      Todo List Application with PHP and MySQL 
+      Change Tab
    </h1>
 
    <div class="container text-center scrollbar" >

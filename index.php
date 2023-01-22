@@ -34,30 +34,75 @@ if (isset($_POST['submit'])) {
    <title>Todo List</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    
+    "
+
+>
+  <div class="container">
+    <a class="navbar-brand" href="https://rizkyanandafaradin.github.io/rizkyanandafweb/">
+      <img class ="rounded-circle" style="width: 50px" src="img/logoRANF.png" alt="">
+    </a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="navbar-collapse collapse" id="collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"  >
+          <a class="nav-link" style="color: white;" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="https://github.com/RizkyAnandaFaradin/Todolist">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="logout.php">Logout</a>
+        </li>
+        
+ 
+
+
+
+
+          <!-- <li class="nav-item">
+               <form>
+                  <div class="form-group">
+                     <div class="input-group" >
+                       <input type="text" class="form-control" placeholder="Search" id="search" style="width: 100px; height: 30px">
+                      
+                     </div>
+                  </div>
+               </form>
+         
+        </li> -->
+
+
+      </ul>
+      
+    </div>
+     <form class="form-inline navbar-collapse collapse" id="collapse">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search">
+  </form>
+  </div>
+</nav>
+
+
+
   <main class="container container-sm " " >
-      <h1>
+  <br>
+      <h1 style="color: white">
          Todo List Application with PHP and MySQL 
       </h1>
 
       <div class="container text-center scrollbar" >
          <div class="row">
             <div class="col-sm-8">
-               <form>
-                  <div class="form-group">
-                     <div class="input-group">
-                       <input type="text" class="form-control" placeholder="Search" id="search">
-                        <button class="btn btn-secondary" type="button">
-                           <i class="fa fa-search">Search</i>
-                         </button>
-                     </div>
-                  </div>
-               </form>
-               <br>
-              
+         
+         
             <!-- Start tabel todolist -->
             <table class="table ">
                <thead>
-                  <tr class="table-primary">
+                  <tr class="table-primary" id="primary" style="font-weight: bold">
                      <th scope="col">No</th>
                      <th scope="col">Date</th>
                      <th scope="col">Tasks</th>
@@ -121,7 +166,6 @@ if (isset($_POST['submit'])) {
                   </div>
                </div>
             </form>   
-               <a href="logout.php" class="btn btn-danger action" style="float:left" >Logout</a>  
          
          </div>
       
@@ -129,5 +173,7 @@ if (isset($_POST['submit'])) {
       </div>
    </main>
    <script src="js/index.js"></script> 
+   <script src="bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script> 
+
 </body>
 </html>
